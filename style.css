@@ -1,0 +1,259 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.user-icon {
+  cursor: pointer;
+  background-color:  white;
+  color: #2a2a3d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.user-icon:hover{
+    transform: scale(1.05);
+}
+
+.login-container {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  animation: dropdown 0.5s ease;
+  transform-origin: top;
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-form button {
+  background-color: #1a1a2e;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+nav {
+  background-color: #16213e;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  background: #16213e;
+  padding: 3px 12px;
+  border: none;
+  margin: 0 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+nav button:hover {
+  color: #0f3460;
+  background: white;
+  transform: scale(1.05);
+}
+.active {
+  color: #0f3460;
+  background: white;
+  transform: scale(1.05);
+}
+
+/*page client*/
+.anime-grid {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 5%;
+}
+.card {
+  min-width: 25%;
+  margin: 10px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+p {
+  color: #555;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.slider-btn:focus {
+  outline: none;
+}
+.anime-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.anime-card-content {
+  padding: 15px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #16213e;
+  color: #fff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #0f3460;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1a1a2e;
+}
+.logout-container {
+    text-align: center;
+  }
+  
+  .logout-btn {
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-btn i {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #16213e;
+    color: white;
+    transform: scale(1.05);
+  }
