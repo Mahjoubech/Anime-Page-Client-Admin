@@ -36,9 +36,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Example Anime</td>
+                        <td>One Piece</td>
                         <td>Shonen</td>
-                        <td>24</td>
+                        <td>1001</td>
                         <td>
                             <a href="#" class="btn">Edit</a>
                             <a href="#" class="btn">Delete</a>
@@ -46,9 +46,34 @@
                     </tr>
                 </tbody>
             </table>
-            <a href="#" class="btn">Add New Anime</a>
+            <a href="#" id="anime-button" class="btn">Add New Anime</a>
         </div>
     </div>
+    <div class="add-anime-form hidden">
+        <h2>Add New Anime</h2>
+        <form>
+          <label for="anime-title">Anime Title:</label>
+          <input type="text" id="anime-title" name="anime-title" required>
+          
+          <label for="anime-genre">Genre:</label>
+          <input type="text" id="anime-genre" name="anime-genre" required>
+          
+          <label for="anime-episodes">Episodes:</label>
+          <input type="number" id="anime-episodes" name="anime-episodes" required>
+          
+          <label for="anime-image">Image:</label>
+          <input type="file" id="anime-image" name="anime-image" placeholder="Image URL" required>
+          
+          <label for="anime-link">Watch Link:</label>
+          <input type="text" id="anime-link" name="anime-link" placeholder="Watch Link" required>
+          
+          <button type="submit" class="submit-btn">Add Anime</button>
+          <button type="button" class="cancel-btn">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
     <script src="admin.js"></script>
 </body>
 </html>
