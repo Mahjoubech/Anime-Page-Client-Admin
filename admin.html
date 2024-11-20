@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Anime Universe</title>
+</head>
+<body>
+
+    <!-- Admin Page -->
+    <div id="admin-page">
+        <header>
+            <h1>Page Admin</h1>
+            <div class="logout-container">
+                <button id="logout" class="logout-btn">
+                  <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+              </div>
+        </header>
+        <nav>
+            <button class="active">Anime Management</button>
+            <button >User Management</button>
+            <button >Statistics</button>
+        </nav>
+        <div class="container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Anime Title</th>
+                        <th>Genre</th>
+                        <th>Episodes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Example Anime</td>
+                        <td>Shonen</td>
+                        <td>24</td>
+                        <td>
+                            <a href="#" class="btn">Edit</a>
+                            <a href="#" class="btn">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="btn">Add New Anime</a>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
