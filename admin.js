@@ -29,27 +29,37 @@ let animes = JSON.parse(localStorage.getItem('anim')) || [];
 clickadd.addEventListener('click',(e)=>{
   e.preventDefault();
   console.log('Submit button clicked');
-  let newanime = {
-    title : titleinpt.value,
-    genre : genreinpt.value,
-    eposide : eposideinpt.value,
-    image : imageinpt.value,
-    link : linkinpt.value,
-  }
-  animes.push(newanime);
-  localStorage.setItem('anim', JSON.stringify(animes));
-  alert('Anime added successfully!');
-  console.log('Anime List:', animes);
+  let file = imageinpt.files[0];
+  if (file) {
+      let reader = new FileReader();
 
-  titleinpt.value = "";
-  genreinpt.value = "";
-  eposideinpt.value = "";
-  imageinpt.value = "";
-  linkinpt.value = "";
-  show();
-})
+      reader.onload = function (event) {
+          let newanime = {
+              title: titleinpt.value,
+              genre: genreinpt.value,
+              eposide: eposideinpt.value,
+              image: event.target.result, 
+              link: linkinpt.value,
+          };
+
+          animes.push(newanime);
+          localStorage.setItem('anim', JSON.stringify(animes));
+          alert('Anime added successfully!');
+          console.log('Anime List:', animes);
+          titleinpt.value = "";
+          genreinpt.value = "";
+          eposideinpt.value = "";
+          imageinpt.value = "";
+          linkinpt.value = "";
+          show(); 
+      };
+
+      reader.readAsDataURL(file); 
+  } else {
+      alert('please add photo the anime');
+  }
+});
 let tbodys = document.querySelector('tbody')
-let clianime = document.querySelector('.anime-grid')
 function show(){
    tbodys.innerHTML = ''
   for (let i = 0; i < animes.length; i++) {
@@ -64,23 +74,11 @@ function show(){
   </td>
 </tr>
     `
-    tbodys.innerHTML += contnt;
-    clianime.innerHTML = ''
-    let cliecont = `
-    <div class="card">
-                    <img src="${animes[i].link}" alt="${animes[i].title}">
-                    <div class="card-content">
-                      <span class="tag">يعرض الآن</span>
-                      <h3>${animes[i].title}e</h3>
-                      <p>${animes[i].eposide}</p>
-                    </div>
-    </div>
-    `
-    clianime.innerHTML += cliecont
+    tbodys.innerHTML += contnt; 
   }
-  
 
 }
+ 
 function delet(i){
   animes.splice(i, 1); 
   localStorage.anim = JSON.stringify(animes);
