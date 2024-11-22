@@ -8,7 +8,8 @@ let cancelBtn = document.querySelector('.cancel-btn');
 
 addAnimeBtn.addEventListener('click', () => {
   addAnimeForm.classList.remove('hidden');
- 
+  console.log("hhhhhhhhhhhhhhh");
+  
 });
 
 cancelBtn.addEventListener('click', () => {
@@ -69,7 +70,7 @@ function show(){
   <td>${animes[i].genre}</td>
   <td>${animes[i].eposide}</td>
   <td>
-      <a href="#" class="btn">Edit</a>
+      <a href="#" id="editanime" onclick ="edit(${i})" class="btn">Edit</a>
       <a href="#" onclick ="delet(${i})" class="btn">Delete</a>
   </td>
 </tr>
@@ -78,10 +79,24 @@ function show(){
   }
 
 }
- 
+let edits = document.getElementById('editanime')
+  let formedt = document.getElementById('formedit')
+function edit(i){
+  formedt.classList.remove('hidden')
+  alert('bda khedma')
+}
+ //edit
+// let edits = document.getElementById('editanime')
+// let formedt = document.getElementById('formedit')
+//  edits.addEventListener("click",()=>{
+//   alert("this my fuuckinnnng");
+//  });
+
+
 function delet(i){
   animes.splice(i, 1); 
   localStorage.anim = JSON.stringify(animes);
   show(); 
 }
+
 show()
