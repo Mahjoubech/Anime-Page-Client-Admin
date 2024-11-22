@@ -21,3 +21,25 @@ loginForm.addEventListener('submit', (e) => {
         alert('Invalid Credentials');
     }
 });
+
+let panls = document.getElementById('panels');
+let animes = JSON.parse(localStorage.getItem('anim')) || [];
+
+function showCards() {
+  panls.innerHTML = ''; 
+  animes.forEach((anime) => {
+    let cliont = `
+      <div class="card">
+       <a href="${animes.link}"> <img src="${anime.image}" alt="${anime.title}"></a>
+       
+        <div class="card-content">
+          <span class="tag">Now showing</span>
+          <h3>${anime.title}</h3>
+          <p>${anime.eposide}</p>
+        </div>
+      </div>`;
+    panls.innerHTML += cliont;
+  });
+}
+
+showCards();
