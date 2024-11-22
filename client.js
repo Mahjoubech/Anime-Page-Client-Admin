@@ -30,7 +30,7 @@ function showCards() {
   animes.forEach((anime) => {
     let cliont = `
       <div class="card">
-       <a href="${animes.link}"> <img src="${anime.image}" alt="${anime.title}"></a>
+       <a href="${anime.link}"> <img src="${anime.image}" alt="${anime.title}"></a>
        
         <div class="card-content">
           <span class="tag">Now showing</span>
